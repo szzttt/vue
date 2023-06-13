@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <style>
+    #app {
+      width: 480px;
+      height: 100px;
+      margin: 200px auto;
+    }
+
+    .input-num {
+      margin-top: 20px;
+      height: 100%;
+      display: flex;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 4px black;
+    }
+
+    .input-num button {
+      width: 150px;
+      height: 100%;
+      font-size: 40px;
+      color: gray;
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+
+    .input-num span {
+      height: 100%;
+      font-size: 40px;
+      flex: 1;
+      text-align: center;
+      line-height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 计数器 -->
+    <div class="input-num">
+      <button @click="jian">-</button>
+      <span>{{ nub1 }}</span>
+      <button @click="jia">+</button>
+    </div>
+  </div>
+</body>
+
+</html>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- 编码 -->
+<script>
+  // 创建Vue实例
+  var dknaj = new Vue({
+    el: "#app",
+    data: {
+      nub1: 1
+    },
+    methods: {
+      jian: function () {
+        if (this.nub1 >= 1) {
+          this.nub1--;
+
+        }
+      },
+      jia: function () {
+        if (this.nub1 < 10) {
+          this.nub1++;
+        }
+      }
+    }
+  })
+</script>

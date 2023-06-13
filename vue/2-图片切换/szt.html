@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>图片切换</title>
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+  <div id="mask">
+    <div class="center">
+      <h2 class="title">
+        环境
+      </h2>
+      <!-- 图片 -->
+      <img alt="" :src="tp[index]" />
+      <!-- 左箭头 -->
+      <!-- <a href="javascript:void(0)" v-show="index!=0" @click="prev" class="left">
+        <img src="./images/prev.png" alt="" />
+      </a> -->
+      <a href="javascript:void(0)" class="left" v-show="index!=0">
+        <img src="./images/prev.png" alt="" @click="shang" />
+      </a>
+      <!-- 右箭头 -->
+      <a href="javascript:void(0)" class="right" v-show="index<tp.length-1">
+        <img src="./images/next.png" alt="" @click="xia" />
+      </a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+    var adwh = new Vue({
+      el: "#mask",
+      data: {
+        tp: ["./images/00.jpg",
+          "./images/01.jpg",
+          "./images/02.jpg",
+          "./images/03.jpg",
+        ],
+        index: 0
+      },
+      methods: {
+        xia: function () {
+          this.index++;
+
+
+        },
+        shang: function () {
+          this.index--;
+
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
